@@ -1,0 +1,82 @@
+ 
+--- RESET STARTED 29-08-2025  4:35:21.93 --- 
+Killing PID 5436 
+SUCCESS: The process with PID 5436 has been terminated.
+Killing PID 5436 
+ERROR: The process "5436" not found.
+ERROR:  relation "i" does not exist
+CONTEXT:  SQL statement "TRUNCATE TABLE I RESTART IDENTITY CASCADE"
+PL/pgSQL function inline_code_block line 1 at EXECUTE
+{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc4NTE4YmRhLWM4OWYtNDQ2Yy05ZDE3LThjOGIzMjk4ZTA2YiIsImVtYWlsIjoiZm91bmRlckBpcW9uaWsuaW4iLCJuYW1lIjoiRm91bmRlciIsInJvbGVzIjpbImFkbWluIiwiYWRtaW4iLCJhZG1pbiIsImFkbWluIiwiYWRtaW4iLCJhZG1pbiIsImFkbWluIiwiYWRtaW4iLCJhZG1pbiIsImFkbWluIl0sInBlcm1pc3Npb25zIjpbIkFUVEVOREFOQ0VfUFVOQ0giLCJQQVlST0xMX1JVTiIsIlBBWVJPTExfVklFVyIsIkVNUExPWUVFX0NSRUFURSIsIkVNUExPWUVFX1ZJRVciLCJPRkZFUl9DUkVBVEUiLCJPRkZFUl9WSUVXIiwiQVRURU5EQU5DRV9BUFBST1ZFIiwiSU5DRU5USVZFX0FQUFJPVkUiLCJFTVBMT1lFRV9ERUFDVElWQVRFIl0sImlhdCI6MTc1NjQyMjMyMywiZXhwIjoxNzU2NDY1NTIzfQ.VeK_yS9c8Rfgk5CfTHpkZfaYGd1GeQzGnFylIA5G70M","user":{"id":"78518bda-c89f-446c-9d17-8c8b3298e06b","name":"Founder","email":"founder@iqonik.in","permissions":["ATTENDANCE_PUNCH","PAYROLL_RUN","PAYROLL_VIEW","EMPLOYEE_CREATE","EMPLOYEE_VIEW","OFFER_CREATE","OFFER_VIEW","ATTENDANCE_APPROVE","INCENTIVE_APPROVE","EMPLOYEE_DEACTIVATE"],"roles":["admin","admin","admin","admin","admin","admin","admin","admin","admin","admin"]}} 
+--- RESET STARTED 29-08-2025  4:42:47.28 --- 
+[%date% The] [0/5] Killing existing process on port 8080 (if any)... 
+[%date% Enter] [0/5] Killing existing process on port 8080 (if any)... 
+[29-08-2025  4:42:47.37] Killing PID 15536 
+SUCCESS: The process with PID 15536 has been terminated.
+[29-08-2025  4:42:47.37] Killing PID 15536 
+ERROR: The process "15536" not found.
+[%date% The] [1/5] Resetting database tables... 
+[%date% Enter] [1/5] Resetting database tables... 
+ERROR:  relation "i" does not exist
+CONTEXT:  SQL statement "TRUNCATE TABLE I RESTART IDENTITY CASCADE"
+PL/pgSQL function inline_code_block line 1 at EXECUTE
+[%date% The] [2/5] Seeding default permissions and admin user... 
+[%date% Enter] [2/5] Seeding default permissions and admin user... 
+[%date% The] [3/5] Starting backend server... 
+[%date% Enter] [3/5] Starting backend server... 
+[%date% The] [4/5] Testing login API... 
+[%date% Enter] [4/5] Testing login API... 
+{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc4NTE4YmRhLWM4OWYtNDQ2Yy05ZDE3LThjOGIzMjk4ZTA2YiIsImVtYWlsIjoiZm91bmRlckBpcW9uaWsuaW4iLCJuYW1lIjoiRm91bmRlciIsInJvbGVzIjpbImFkbWluIiwiYWRtaW4iLCJhZG1pbiIsImFkbWluIiwiYWRtaW4iLCJhZG1pbiIsImFkbWluIiwiYWRtaW4iLCJhZG1pbiIsImFkbWluIl0sInBlcm1pc3Npb25zIjpbIkFUVEVOREFOQ0VfUFVOQ0giLCJQQVlST0xMX1JVTiIsIlBBWVJPTExfVklFVyIsIkVNUExPWUVFX0NSRUFURSIsIkVNUExPWUVFX1ZJRVciLCJPRkZFUl9DUkVBVEUiLCJPRkZFUl9WSUVXIiwiQVRURU5EQU5DRV9BUFBST1ZFIiwiSU5DRU5USVZFX0FQUFJPVkUiLCJFTVBMT1lFRV9ERUFDVElWQVRFIl0sImlhdCI6MTc1NjQyMjc3MSwiZXhwIjoxNzU2NDY1OTcxfQ.OZu9hMNJr-Q9feuJ_tHz8V9JypJEsuFO3q-e8U0wfLk","user":{"id":"78518bda-c89f-446c-9d17-8c8b3298e06b","name":"Founder","email":"founder@iqonik.in","permissions":["ATTENDANCE_PUNCH","PAYROLL_RUN","PAYROLL_VIEW","EMPLOYEE_CREATE","EMPLOYEE_VIEW","OFFER_CREATE","OFFER_VIEW","ATTENDANCE_APPROVE","INCENTIVE_APPROVE","EMPLOYEE_DEACTIVATE"],"roles":["admin","admin","admin","admin","admin","admin","admin","admin","admin","admin"]}}[%date% The] [4/5] Testing login API... 
+[%date% Enter] [4/5] Testing login API... 
+{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc4NTE4YmRhLWM4OWYtNDQ2Yy05ZDE3LThjOGIzMjk4ZTA2YiIsImVtYWlsIjoiZm91bmRlckBpcW9uaWsuaW4iLCJuYW1lIjoiRm91bmRlciIsInJvbGVzIjpbImFkbWluIiwiYWRtaW4iLCJhZG1pbiIsImFkbWluIiwiYWRtaW4iLCJhZG1pbiIsImFkbWluIiwiYWRtaW4iLCJhZG1pbiIsImFkbWluIl0sInBlcm1pc3Npb25zIjpbIkFUVEVOREFOQ0VfUFVOQ0giLCJQQVlST0xMX1JVTiIsIlBBWVJPTExfVklFVyIsIkVNUExPWUVFX0NSRUFURSIsIkVNUExPWUVFX1ZJRVciLCJPRkZFUl9DUkVBVEUiLCJPRkZFUl9WSUVXIiwiQVRURU5EQU5DRV9BUFBST1ZFIiwiSU5DRU5USVZFX0FQUFJPVkUiLCJFTVBMT1lFRV9ERUFDVElWQVRFIl0sImlhdCI6MTc1NjQyMzI1MiwiZXhwIjoxNzU2NDY2NDUyfQ.9E_CTb9Uyfeb2n57UueLvUI1wLo4EMTItk8jl4swx0M","user":{"id":"78518bda-c89f-446c-9d17-8c8b3298e06b","name":"Founder","email":"founder@iqonik.in","permissions":["ATTENDANCE_PUNCH","PAYROLL_RUN","PAYROLL_VIEW","EMPLOYEE_CREATE","EMPLOYEE_VIEW","OFFER_CREATE","OFFER_VIEW","ATTENDANCE_APPROVE","INCENTIVE_APPROVE","EMPLOYEE_DEACTIVATE"],"roles":["admin","admin","admin","admin","admin","admin","admin","admin","admin","admin"]}}========================================== 
+RESET started at 29-08-2025  5:21:14.96 
+========================================== 
+[1/3] Resetting DB... 
+psql:reset.sql:8: NOTICE:  truncate cascades to table "role_permissions"
+psql:reset.sql:8: NOTICE:  truncate cascades to table "user_roles"
+psql:reset.sql:8: NOTICE:  truncate cascades to table "employees"
+psql:reset.sql:8: NOTICE:  truncate cascades to table "leaves"
+psql:reset.sql:8: NOTICE:  truncate cascades to table "incentives"
+psql:reset.sql:8: NOTICE:  truncate cascades to table "payroll_runs"
+psql:reset.sql:8: NOTICE:  truncate cascades to table "audit_logs"
+psql:reset.sql:8: NOTICE:  truncate cascades to table "ctc_structures"
+psql:reset.sql:8: NOTICE:  truncate cascades to table "attendance_days"
+psql:reset.sql:8: NOTICE:  truncate cascades to table "payroll_lines"
+psql:reset.sql:8: NOTICE:  truncate cascades to table "documents"
+psql:reset.sql:8: NOTICE:  truncate cascades to table "role_permissions"
+psql:reset.sql:8: NOTICE:  truncate cascades to table "user_roles"
+psql:reset.sql:8: NOTICE:  truncate cascades to table "ctc_structures"
+psql:reset.sql:8: NOTICE:  truncate cascades to table "attendance_days"
+psql:reset.sql:8: NOTICE:  truncate cascades to table "leaves"
+psql:reset.sql:8: NOTICE:  truncate cascades to table "incentives"
+psql:reset.sql:8: NOTICE:  truncate cascades to table "payroll_lines"
+psql:reset.sql:8: NOTICE:  truncate cascades to table "documents"
+psql:reset.sql:8: NOTICE:  truncate cascades to table "payroll_lines"
+DO
+INSERT 0 10
+INSERT 0 1
+INSERT 0 10
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+[2/3] Restarting backend... 
+SUCCESS: The process "node.exe" with PID 4340 has been terminated.
+SUCCESS: The process "node.exe" with PID 3240 has been terminated.
+node:internal/modules/cjs/loader:1404
+  throw err;
+  ^
+
+Error: Cannot find module 'D:\IQONIK Applications\HRMS\iqonik-hrms-stub-v1\backend\src\utils\generateAllCards.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)
+    at Function._load (node:internal/modules/cjs/loader:1211:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.16.0

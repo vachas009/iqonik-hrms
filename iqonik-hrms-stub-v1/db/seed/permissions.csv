@@ -1,0 +1,13 @@
+code,description
+EMPLOYEE_CREATE,Create employee profiles
+EMPLOYEE_VIEW,View employee list & details
+EMPLOYEE_DEACTIVATE,Deactivate/exit employees
+OFFER_CREATE,Create offers from templates
+OFFER_VIEW,View offers & status
+DOCUMENT_CREATE,Create/upload documents
+DOCUMENT_VIEW,View documents
+PAYROLL_RUN,Run payroll
+PAYROLL_VIEW,View payroll & payslips
+INCENTIVE_APPROVE,Approve incentives
+ATTENDANCE_APPROVE,Approve attendance/leave
+ATTENDANCE_PUNCH,Record own attendance

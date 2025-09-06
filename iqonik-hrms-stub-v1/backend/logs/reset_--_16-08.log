@@ -1,0 +1,12 @@
+====================================== 
+RESET started at 29-08-2025 16:08:29.83 
+====================================== 
+'""' is not recognized as an internal or external command,
+operable program or batch file.
+ERROR: The process "node.exe" not found.
+
+> iqonik-hrms-backend@0.1.0 dev
+> node src/index.js
+
+IQONIK HRMS backend listening on 8080
+^C^C

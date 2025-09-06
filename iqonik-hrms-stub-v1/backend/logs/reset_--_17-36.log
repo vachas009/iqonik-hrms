@@ -1,0 +1,7 @@
+
+> iqonik-hrms-backend@0.1.0 dev
+> node src/index.js
+
+IQONIK HRMS backend listening on 8080
+POST /auth/login 200 1008 - 1143.657 ms
+^C^C
