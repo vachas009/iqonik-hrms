@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>HR Dashboard - IQONIK HRMS</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <!-- SheetJS for Excel Export -->
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+</head>
+<body class="container mt-4">
+  <h1>HR Dashboard</h1>
+
+  <!-- Refresh Attendance -->
+  <div class="card mt-4">
+    <div class="card-header">Attendance Management</div>
+    <div class="card-body">
+      <button class="btn btn-primary" onclick="refreshAttendance()">Refresh Monthly Attendance</button>
+    </div>
+  </div>
+
+  <!-- Payroll Summary -->
+  <div class="card mt-4">
+    <div class="card-header d-flex justify-content-between align-items-center">
+      <span>Payroll Summary</span>
+      <div>
+        <button class="btn btn-success btn-sm" onclick="exportPayrollCSV()">Export CSV</button>
+        <button class="btn btn-info btn-sm" onclick="exportPayrollExcel()">Export Excel</button>
+      </div>
+    </div>
+    <div class="card-body">
+      <table class="table table-bordered" id="payroll-summary">
+        <thead>
+          <tr>
+            <th>Employee</th>
+            <th>Base Salary</th>
+            <th>Presents</th>
+            <th>Leaves</th>
+            <th>Absents</th>
+            <th>Payable Salary</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Leave Policies -->
+  <div class="card mt-4">
+    <div class="card-header">Leave Policies</div>
+    <div class="card-body">
+      <table class="table table-bordered" id="leave-policies">
+        <thead>
+          <tr>
+            <th>Role</th>
+            <th>Leave Type</th>
+            <th>Yearly Allocation</th>
+            <th>Carry Forward</th>
+            <th>Encashable</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+  const token = localStorage.getItem("jwt") || "";
+
+  function refreshAttendance() {
+    const month = prompt("Enter month (YYYY-MM) or leave blank for current month:");
+    fetch("/api/hr/attendance/refresh", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer " + token
+      },
+      body: JSON.stringify({ month: month || null })
+    })
+    .then(res => res.json())
+    .then(data => alert(data.message || data.error));
+  }
+
+  function loadPayroll() {
+    const month = new Date().toISOString().slice(0,7);
+    fetch(`/api/hr/payroll-summary?month=${month}`, {
+      headers: { "Authorization": "Bearer " + token }
+    })
+    .then(res => res.json())
+    .then(data => {
+      let tbody = document.querySelector("#payroll-summary tbody");
+      tbody.innerHTML = "";
+      data.forEach(row => {
+        tbody.innerHTML += `<tr>
+          <td>${row.employee_name} (${row.employee_code})</td>
+          <td>${row.base_salary}</td>
+          <td>${row.presents}</td>
+          <td>${row.leaves}</td>
+          <td>${row.absents}</td>
+          <td>${row.payable_salary}</td>
+        </tr>`;
+      });
+      window.payrollData = data;
+    });
+  }
+
+  function loadPolicies() {
+    fetch("/api/hr/leave-policies", {
+      headers: { "Authorization": "Bearer " + token }
+    })
+    .then(res => res.json())
+    .then(data => {
+      let tbody = document.querySelector("#leave-policies tbody");
+      tbody.innerHTML = "";
+      data.forEach(row => {
+        tbody.innerHTML += `<tr>
+          <td>${row.role_name}</td>
+          <td>${row.leave_type}</td>
+          <td>${row.yearly_allocation}</td>
+          <td>${row.carry_forward ? "Yes" : "No"}</td>
+          <td>${row.encashable ? "Yes" : "No"}</td>
+        </tr>`;
+      });
+    });
+  }
+
+  // Export Payroll Data to CSV
+  function exportPayrollCSV() {
+    if (!window.payrollData || window.payrollData.length === 0) {
+      alert("No payroll data to export");
+      return;
+    }
+    let csv = "Employee,Base Salary,Presents,Leaves,Absents,Payable Salary\n";
+    window.payrollData.forEach(row => {
+      csv += `"${row.employee_name} (${row.employee_code})",${row.base_salary},${row.presents},${row.leaves},${row.absents},${row.payable_salary}\n`;
+    });
+    const blob = new Blob([csv], { type: "text/csv" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "payroll_summary.csv";
+    a.click();
+    URL.revokeObjectURL(url);
+  }
+
+  // Export Payroll Data to Excel (XLSX)
+  function exportPayrollExcel() {
+    if (!window.payrollData || window.payrollData.length === 0) {
+      alert("No payroll data to export");
+      return;
+    }
+    const worksheet = XLSX.utils.json_to_sheet(window.payrollData);
+    const workbook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(workbook, worksheet, "Payroll Summary");
+    XLSX.writeFile(workbook, "payroll_summary.xlsx");
+  }
+
+  loadPayroll();
+  loadPolicies();
+  </script>
+</body>
+</html>
